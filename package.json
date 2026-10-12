@@ -1,25 +1,26 @@
+
 {
   "name": "black-x",
   "version": "1.0.0",
-  "description": "BLACK X \\u2014 Interactive Anime Tracker & Prediction Engine (bilingual EN/AR)",
+  "description": "BLACK X — Interactive Anime Tracker & Prediction Engine (bilingual EN/AR)",
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "vite build client && node server/src/index.js",
+    "dev": "npm run build && node server/src/index.js",
     "server": "node --watch server/src/index.js",
     "client": "vite --config client/vite.config.js",
     "seed": "node server/src/seed.js",
     "build": "vite build client",
-    "start": "vite build client && node server/src/index.js",
+    "start": "node server/src/index.js",
     "db:generate": "prisma generate",
     "db:push": "prisma db push",
     "db:migrate": "prisma migrate dev",
+    "db:migrate:deploy": "prisma migrate deploy",
     "lab": "vite --config client/vite.config.js --open /zellige-3d-lab.html",
     "check:ornaments": "node tools/ornament-node-smoke.mjs"
   },
   "dependencies": {
     "@prisma/client": "6.19.2",
-    "@vitejs/plugin-react": "^5.0.4",
     "aniwatch": "^2.27.9",
     "bcryptjs": "^3.0.2",
     "better-sqlite3": "^12.4.1",
@@ -36,16 +37,15 @@
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.9.4",
     "recharts": "^3.10.1",
-    "three": "^0.180.0",
-    "vite": "^7.1.9"
+    "three": "^0.180.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^5.0.4",
     "concurrently": "^9.2.1",
     "prisma": "6.19.2",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "react-router-dom": "^7.9.4",
     "vite": "^7.1.9"
+  },
+  "engines": {
+    "node": ">=24 <25"
   }
 }
